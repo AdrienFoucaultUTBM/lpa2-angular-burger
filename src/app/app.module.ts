@@ -7,19 +7,26 @@ import { BurgersService } from './typescript-angular-client-generated/api/burger
 
 import { ApiModule } from './typescript-angular-client-generated';
 import { HttpClientModule } from '@angular/common/http';
-import { BurgersViewComponent } from './burgers-view/burgers-view.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card'; 
+import { MatButtonModule } from '@angular/material/button';
+import { BurgerDetailComponent } from './burger-detail/burger-detail.component';
+import { AppRoutingModule } from './app-routing.module'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     BurgersComponent,
-    BurgersViewComponent
+    BurgerDetailComponent
   ],
   imports: [
     BrowserModule,
     ApiModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    AppRoutingModule
   ],
   providers: [
     BurgersService

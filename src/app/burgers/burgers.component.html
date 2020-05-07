@@ -1,6 +1,15 @@
-{{id}}
-{{name}}
-{{price}}
-<img src={{image}} alt="un burger pas chargé">
-{{image}}
-{{index}}
+<div *ngFor="let burger of burgers">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{burger.name}}</mat-card-title>
+            <mat-card-subtitle>Burger numero {{burger.id}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{burger.image}} alt="Unload Photo of Burger">
+        <mat-card-content>
+            <p>{{burger.price}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+        <a mat-raised-button color="basic" routerLink="burgerDetail/{{burger.id}}">DETAIL</a>
+        </mat-card-actions>
+    </mat-card>
+</div>
